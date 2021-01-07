@@ -1,0 +1,29 @@
+
+.container {
+    position: relative;
+    width: 600px;
+    border-top: 5px dotted #29ABE2;
+    border-right: 5px dotted #29ABE2;
+    border-left: 5px solid #29ABE2;
+    border-bottom: 5px solid #29ABE2;
+    color: #29ABE2;
+    font-size: 40px;
+    line-height: 60px;
+    padding: 34px 40px;
+    text-align: center;
+}
+
+.quotation-mark {
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    padding: 10px;
+}
+
+.reversed-quotation-mark {
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    padding: 10px;
+    transform: rotate(180deg);
+}

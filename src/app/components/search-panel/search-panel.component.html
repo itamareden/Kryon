@@ -1,0 +1,34 @@
+<div class="container">
+    <query-dashboard [isDisableBtn]="!keywords" (clickedSubmit)="showJokesList()">
+        <div style="margin-left: 32px;">
+            <span class="label">Keyword(s)</span>
+            <input type="text" 
+                [value]="keywords" 
+                placeholder="e.g Itamar Eden, the King" 
+                (input)="keywords=keywordsInput.value" 
+                #keywordsInput>
+        </div>
+    </query-dashboard>
+    <div *ngIf="jokes?.length > 0" class="jokes-container">
+        <ul class="jokes-list">
+            <li class="jokes-header">
+                <div class="jokes-header-item" (click)="sortBy('id')">
+                    <span class="jokes-header-item-text">ID</span>
+                    <span *ngIf="sortedBy === 'id'" class="jokes-header-item-icon">⭣</span>
+                </div>
+                <div class="jokes-header-item" (click)="sortBy('categories')">
+                    <span class="jokes-header-item-text">Category</span>
+                    <span *ngIf="sortedBy === 'categories'" class="jokes-header-item-icon">⭣</span>
+                </div>
+                <div class="jokes-header-item" (click)="sortBy('createdDate')">
+                    <span class="jokes-header-item-text">Date Created</span>
+                    <span *ngIf="sortedBy === 'createdDate'" class="jokes-header-item-icon">⭣</span>
+                </div>
+            </li>
+            <li *ngFor="let joke of jokes">
+                <joke-row [joke]="joke"></joke-row>
+            </li>
+        </ul>
+    </div>
+</div>
+

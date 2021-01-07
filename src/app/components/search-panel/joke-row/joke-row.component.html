@@ -1,0 +1,10 @@
+<div>
+    <div class="joke-row" [style.background]="isShowJoke ? '#E2F4FC' : 'white'" (click)="isShowJoke = !isShowJoke">
+        <div class="joke-row-item">{{joke.id}}</div>
+        <div class="joke-row-item">{{joke.categories}}</div>
+        <div class="joke-row-item">{{joke.createdDate}}</div>
+    </div>
+    <div *ngIf="isShowJoke" class="joke-container">
+        <joke [joke]="joke.value" [backgroundColor]="'#EFF4F7'"></joke>
+    </div>
+</div>

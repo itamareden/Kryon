@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    height: 104px;
+    background: #FFF2EE;
+}
+
+.btn-go {
+    width: 160px;
+    height: 40px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15px;
+    border-radius: 3px;
+    text-align: center;
+    margin-right: 32px;
+    background: #F15A24;
+    color: white;
+    border-width: 0;
+    cursor: pointer;
+
+    &:disabled {
+        background: #E3E8EB;
+        color: #B3BEC2;
+    }
+}

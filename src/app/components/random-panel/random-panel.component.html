@@ -1,0 +1,24 @@
+<div class="container">
+    <query-dashboard [isDisableBtn]="isDisableBtn()" (clickedSubmit)="showJoke()">
+        <div class="controls">
+            <div>
+                <span class="label">Your Name</span>
+                <input type="text" 
+                    [value]="name" 
+                    placeholder="e.g Chuck Norris" 
+                    (input)="name=nameInput.value" 
+                    #nameInput>
+            </div>
+            <div style="margin-left: 32px;">
+                <span class="label">Category</span>
+                <select [(ngModel)]="selectedCategory">
+                    <option *ngFor="let category of categories" [ngValue]="category">{{category}}</option>
+                </select>
+            </div>
+        </div>
+    </query-dashboard>
+    <div *ngIf="isShowJoke" class="joke">
+        <joke [joke]="joke"></joke>
+    </div>
+</div>
+
